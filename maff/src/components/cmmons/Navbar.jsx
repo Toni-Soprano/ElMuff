@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 import search_icon_light from "../../assets/search-w.png";
 import search_icon_dark from "../../assets/search-b.png";
 import toggle_light from "../../assets/day.png";
@@ -52,7 +53,7 @@ const Navbar = ({ theme, setTheme }) => {
               <li>Profile</li>
               <li>Card</li>
               <li>Settings</li>
-              <li>Logout</li>
+             <Link smooth  to="/login"> <li>Login</li></Link> 
             </ul>
           </div>
         )}

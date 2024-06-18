@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Auth.css'
+import './login.css'
 const Auth = () => {
   return (
     <div className='body'>
@@ -22,7 +22,7 @@ const Auth = () => {
           <Link > Forget password </Link>
           <Link to="/register"> Signup</Link>
         </div>
-        <input type='submit' value='login'/>
+        <Link to="/home"><input type='submit' value='login'/></Link>
 
       </form>
     </div>
