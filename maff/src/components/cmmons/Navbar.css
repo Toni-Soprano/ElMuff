@@ -1,128 +1,222 @@
 .navbar {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #fff;
-    padding: 10px 7%;
-    transition: 0.5s;
-
+  position: fixed;
+  height: 80px;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 10px 7%;
+  transition: 0.5s;
 }
+
 .logo {
   cursor: pointer;
-    font-size: 24px;
+  font-size: 24px;
   font-weight: bold;
+}
 
-}
 ul {
-    flex: 1;
-    list-style: none;
-    text-align: center;
+  flex: 1;
+  list-style: none;
+  text-align: center;
 }
+
 ul li {
-    display: inline-block;
-    margin: 10px 20px;
-    font-size: 14px;
-    cursor: pointer;
+  display: inline-flex;
+  margin: 10px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.toggle-icon,
+ 
+.avatar {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.icon {
+  width: 20px; /* Adjust the size as needed */
+  height: 20px; /* Adjust the size as needed */
+  vertical-align: middle; /* Ensure proper vertical alignment */
+  margin-right: 8px; /* Space between icon and text */
 }
 .toggle-icon {
-    width: 40px;
-    cursor: pointer;
-    margin-left: 40px;
-}
-.search-box {
-    display: flex;
-    align-items: center;
-    background: #242424;
-    padding: 10px 20px;
-    border-radius: 50px;
+  margin-left: 40px;
 }
 
-.search-box input {
-    padding: 6px;
-    background: transparent;
-    border: 0;
-    outline: 0;
-    color: #fff;
-    font-size: 14px;
-    max-width: 200px;
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #242424;
+  height: 40px;
+  padding: 10px 5px;
+  border-radius: 50px;
 }
-.search-box input::placeholder{
-    color: #fff;
+
+.search-box input.visible {
+  width: 150px; /* Width when visible */
 }
 .search-box img {
-    width: 20px;
-    cursor: pointer;
+  position: relative;
+  left: 5px;
+width: 20px;
+cursor: pointer;
 }
+.search-box input {
+  width: 0;
+  padding: 6px;
+  position: relative;
+  left: 8px;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  color: #fff;
+  font-size: 14px;
+  transition: width 0.5s ease-in-out; /* Smooth transition */
+}
+
+.search-box input::placeholder {
+  color: #fff;
+}
+
 .dark .navbar {
-    background: #000;
-    color: #fff;
+  background: #000;
+  color: #fff;
 }
+
 .dark .search-box {
-    background: #fff;
+  background: #fff;
 }
+
 .dark .search-box input {
-    color: #222;
+  color: #222;
 }
+
 .dark .search-box input::placeholder {
-    color: #222;
+  color: #222;
 }
-.avatar {
-    width: 40px;
-    cursor: pointer;
-    margin-left: 40px;
-    border-radius: 50%;
-}
+
 .avatar-container {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.dropdown {
+  position: absolute;
+
+  top: 55px; /* Adjust based on your layout */
+  left: -30px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: var(--dropdown-bg-color);
+  border: 1px solid var(--dropdown-border-color);
+}
+
+.dropdown ul {
+  display: inline-block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown ul li {
+  padding: 10px 20px; /* More padding for better spacing */
+  cursor: pointer;
+  color: var(--dropdown-text-color);
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.dropdown ul li:hover {
+  background-color: var(--dropdown-hover-bg-color);
+  color: var(--dropdown-hover-text-color); /* Darker text color on hover */
+}
+
+/* Light Theme */
+.light-theme {
+  --dropdown-bg-color: #ffffff;
+  --dropdown-border-color: #ddd;
+  --dropdown-text-color: #333;
+  --dropdown-hover-bg-color: #f1f1f1;
+  --dropdown-hover-text-color: #000;
+}
+
+/* Dark Theme */
+.dark-theme {
+  --dropdown-bg-color: #333;
+  --dropdown-border-color: #555;
+  --dropdown-text-color: #ddd;
+  --dropdown-hover-bg-color: #444;
+  --dropdown-hover-text-color: #fff;
+}
+
+@media (max-width: 992px) {
+  .navbar {
+    padding: 10px 5%;
   }
-  
-  .dropdown {
+
+  ul {
+    display: none; /* Hide menu items */
+    flex-direction: column;
     position: absolute;
-    top: 60px; /* Adjust based on your layout */
-    left: 20px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    border-radius: 5px;
-    overflow: hidden;
-    background-color: var(--dropdown-bg-color);
-    border: 1px solid var(--dropdown-border-color);
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    text-align: left;
   }
-  
-  .dropdown ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+
+  ul li {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
   }
-  
-  .dropdown ul li {
-    padding: 10px 20px; /* More padding for better spacing */
-    cursor: pointer;
-    color: var(--dropdown-text-color);
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+
+  .toggle-icon {
+    display: block; /* Show the toggle icon */
   }
-  
-  .dropdown ul li:hover {
-    background-color: var(--dropdown-hover-bg-color);
-    color: var(--dropdown-hover-text-color); /* Darker text color on hover */
+
+  .search-box {
+    padding: 5px 10px;
   }
-  
-  /* Light Theme */
-  .light-theme {
-    --dropdown-bg-color: #ffffff;
-    --dropdown-border-color: #ddd;
-    --dropdown-text-color: #333;
-    --dropdown-hover-bg-color: #f1f1f1;
-    --dropdown-hover-text-color: #000;
+
+  .search-box input {
+    max-width: 150px;
   }
-  
-  /* Dark Theme */
-  .dark-theme {
-    --dropdown-bg-color: #333;
-    --dropdown-border-color: #555;
-    --dropdown-text-color: #ddd;
-    --dropdown-hover-bg-color: #444;
-    --dropdown-hover-text-color: #fff;
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .search-box {
+    width: 100%;
+    padding: 5px 10px;
+  }
+
+  .search-box input {
+    width: 100%;
+    max-width: none;
+  }
+
+  .avatar-container {
+    margin-left: 20px;
+  }
+}
+
+/* Show menu on toggle click */
+.navbar.active ul {
+  display: flex;
+}

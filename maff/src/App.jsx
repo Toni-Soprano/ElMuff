@@ -9,11 +9,10 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/login" element={<Auth />} />
+        <Route path="/home" element={<Home/>} />
+        <Route path="/login" element={<Auth/>} />
         <Route path='/register' element={<Register/>}/>
-        <Route path='/c' element={<Carousel/>}/>
-      </Routes>
+       </Routes>
     </Router>
   );
 }

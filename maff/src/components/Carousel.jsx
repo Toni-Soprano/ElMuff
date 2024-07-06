@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './carousel.css';
+import { HiArrowSmLeft, HiArrowSmRight } from "react-icons/hi";
 
 const Carousel = () => {
   const slideRef = useRef(null);
@@ -34,7 +35,7 @@ const Carousel = () => {
         <div className="item" style={{ backgroundImage: "url(./src/assets/1.jpg)" }}>
           <div className="content">
             <div className="name">Pc Games</div>
-            <div className="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+            <div className="des">azazazazazazaz</div>
             <button>See More</button>
           </div>
         </div>
@@ -54,7 +55,7 @@ const Carousel = () => {
         </div>
         <div className="item" style={{ backgroundImage: "url(https://i.ibb.co/Bq4Q0M8/img4.jpg)" }}>
           <div className="content">
-            <div className="name">Log in Now </div>
+            <div className="name">Gift Cards </div>
             <div className="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
             <button>See More</button>
           </div>
@@ -63,8 +64,8 @@ const Carousel = () => {
       </div>
 
       <div className="button">
-        <button className="prev"><i className="fa-solid fa-arrow-left"></i></button>
-        <button className="next"><i className="fa-solid fa-arrow-right"></i></button>
+        <button className="prev"><HiArrowSmLeft/></button>
+        <button className="next"><HiArrowSmRight/></button>
       </div>
     </div>
   );

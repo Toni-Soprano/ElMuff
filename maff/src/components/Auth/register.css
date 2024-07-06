@@ -9,17 +9,18 @@
     background: url('src/assets/bg2.jpg') no-repeat center center fixed;
     background-size: cover;
     display: flex;
+    
     justify-content: center;
     align-items: center;
     min-height: 100vh;
      
  }
  .box-register {
-  left: 30%;
+   left: 30%;
     position: relative;
     right: 250px;
-    width: 380px;
-    height: 420px;
+    width: 480px;
+    height: 500px;
     background: #1c1c1c;
     border-radius: 8px;
     overflow: hidden;
@@ -91,22 +92,25 @@
     position: absolute;
     inset: 4px;
     background: #222;
-    padding: 50px 40px;
+    padding: 60px  30px ;
     border-radius: 8px;
     z-index: 2;
     display: flex;
+     
+    justify-content: center;
     flex-direction: column;
  }
  .box-register form h2 {
     color: #fff;
+    
     font-weight: 500;
     text-align: center;
     letter-spacing: 0.1em;
  }
  .box-register form .inputBox-register {
     position: relative;
-    width: 300px;
-    margin-top: 35px;
+    width: 400px;
+    margin-top: 30px;
  }
  .box-register form .inputBox-register input {
     position: relative;
@@ -136,14 +140,14 @@
  .box-register form .inputBox-register input:focus ~ span  {
     color: #fff;
     font-size: 0.75em;
-    transform: translateY(-34px);
+    transform: translateY(-20px);
  }
  .box-register form .inputBox-register i {
     position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 2px;
+    height: 1px;
     background: #fff;
     border-radius: 4px;
     overflow: hidden;
@@ -152,12 +156,13 @@
  }
  .box-register form .inputBox-register input:valid ~ i ,
  .box-register form .inputBox-register input:valid ~ i {
-    height: 44px;
+    height: 33px;
 
  }
  .box-register form .links-register {
     display: flex;
-    justify-content: space-between;
+    
+    justify-content: center;
  }
  .box-register form .links-register a {
     margin: 10px 0;
@@ -171,11 +176,17 @@
 {
     color: #fff;
 }
+.box-register .inputBox-register input[type="date"]  {
+   color: #8f8f8f;
+}
+.box-register .inputBox-register input[type="date"] ~ span  {
+   bottom: 20px; 
+}
 .box-register form input[type ='submit'] {
     border: none;
     outline: none;
     position: relative;
-    left: 100px;
+    left: 150px;
     padding: 9px 25px;
     background: #fff;
     cursor: pointer;
@@ -183,7 +194,8 @@
     border-radius: 4px;
     font-weight: 600;
     width: 100px;
-    
+    display: flex;
+    justify-content: center;
     margin-top: 10px;
 }
 .box-register form input[type ='submit']:active {

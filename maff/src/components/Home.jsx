@@ -4,6 +4,7 @@ import Footer from "./cmmons/Footer";
 import "./home.css";
 import Auth from "./Auth/Login";
 import Carousel from "./Carousel";
+import Products from "./Products";
 
 const Home = () => {
   const current_theme = localStorage.getItem("current_theme");
@@ -17,16 +18,12 @@ const Home = () => {
     <div>
       <div className={`container ${theme}`}>
         <Navbar theme={theme} setTheme={setTheme} />
-
-        <div className="banner">
-          <h1> ElMuff</h1>
+        <div className={`container ${theme}`}>
+          <Carousel theme={theme} setTheme={setTheme} />
         </div>
-        
-        <div>
-          <Carousel />
-        </div>
-
-        
+      </div>
+      <div className={`container ${theme}`}>
+        <Products />
       </div>
     </div>
   );
