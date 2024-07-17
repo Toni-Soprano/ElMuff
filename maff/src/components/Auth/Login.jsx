@@ -4,9 +4,6 @@ import "./login.css";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { jwtDecode } from "jwt-decode";
-import cookies from 'universal-cookie'
-
-
  
 
 const Auth = () => {
@@ -69,7 +66,28 @@ const Auth = () => {
       });
     }
   };
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        if (token) {
+          const decodedToken = jwtDecode(token);
+          const userId = decodedToken.userId;
 
+          const response = await axios.post(
+            "http://localhost:3900/api/getSingleUser",
+            { userId }
+          );
+          setUser(response.data.user);
+          setIsLoggedIn(true);
+        }
+      } catch (err) {
+        setError(err.message);
+      }
+    };
+
+    fetchUser();
+  }, []);
   return (
     <div className="body">
       <div className="box">

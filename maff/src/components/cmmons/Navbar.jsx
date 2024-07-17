@@ -131,8 +131,7 @@ const Navbar = ({ theme, setTheme }) => {
                 <>
                   <Link to="/register">
                     <li>
-                      <CiLogin className="icon" />
-                      Register
+                       Register
                     </li>
                   </Link>
                   <Link to="/login">
